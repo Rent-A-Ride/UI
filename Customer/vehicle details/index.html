@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent A Ride</title>
+
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="details.css">
+    
+
+
+    <!-- JQUERY -->
+    <script src="js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+
+    <!-- sidebar -->
+
+<div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">Rent A Ride</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="side-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-user-pin'></i>
+          <span class="links_name">Profile</span>
+        </a>
+         <span class="tooltip">Profile</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bxs-user-plus' ></i>
+         <span class="links_name">Request</span>
+       </a>
+       <span class="tooltip">Request</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-wallet' ></i>
+         <span class="links_name">Payment</span>
+       </a>
+       <span class="tooltip">Payment</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-star' ></i>
+         <span class="links_name">Reviews</span>
+       </a>
+       <span class="tooltip">Reviews</span>
+     </li>
+        <li class="profile">
+          <a href="#" class="logout">
+            <i class='bx bx-log-out' ></i>
+            <span class="links_name">log out</span>
+          </a>
+        </li>
+        
+    </ul>
+  </div>
+  
+
+    <div class="home-section">
+         <!-- nav bar -->
+        <nav class="navbar">
+            <div class="container-icon">
+                <a href=""><img class="logo" src="img/logo.png" alt="Rent a Ride Logo"></a>
+            </div>
+            <ul class="nav-list" id="nav-list">
+              <div class="nav-cont">
+                <span>Mr. Suresh</span>
+                <div class="img-cont"><img src="img/profile.png" class="profile-image"></div>
+              </div>      
+            </ul>
+            <div id="toggle-btn" class="menu-container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+
+        <!-- Banner -->
+        <div class="banner-msg">
+            <h1>FAST AND EASY WAY TO <span class="bold yellow">RENT A VEHICLE</span></h1>
+        </div>
+
+        <div class="vehicle-card">
+          <h2 class="vehicle-name">Vehicle Name<span> • RR</span></h2>
+          <div class="details-cont">
+            <div id="gallery">
+              <div class="row">
+                <div class="large-image">
+                  <img src="img/gallery/front.jpg">
+                </div>
+              </div>
+              <div class="row">
+                <div class="thumbnails">
+                    <img src="img/gallery/front.jpg" data-large="img/gallery/front.jpg">
+                    <img src="img/gallery/side.jpg" data-large="img/gallery/side.jpg">
+                    <img src="img/gallery/inside.jpg" data-large="img/gallery/inside.jpg">
+                </div>
+              </div>
+             
+            </div>
+            
+            
+            <div class="vehicle-details">
+              <div class="vehicle-features">
+                <span class="vehicle-seats"><i class='bx bx-user'></i> 5 seats</span>
+                <span class="vehicle-fuel"><i class='bx bxs-gas-pump' ></i> Petrol</span>
+                <span class="vehicle-transmission"><i class='bx bx-slider bx-rotate-90' ></i> Automatic</span>
+                <span class="vehicle-fpd"><i class='bx bx-tachometer' ></i> 18 km/l</span>
+              </div>
+
+              <div class="vehicle-info">
+
+                <div class="two-column-layout">
+                  <div class="left-column">
+                    <ul>
+                      <li>Vehicle ID: SUV</li>
+                      <li>Brand: Toyota</li>
+                      <li>Model: Fortuner</li>
+                      <li>Type: Car</li>
+                      <li>Plate No: sp CAH 5606</li>
+                      <li>Year: 2012</li>
+                    </ul>
+                  </div>
+                  <div class="right-column">
+                    <ul>
+                      <li>Color: White</li>
+                      <li>Doors: 4</li>
+                      <li>Seats: 5</li>
+                      <li>Transmission: Automatic</li>
+                      <li>Fuel: Petrol</li>
+                      <li>AC: Yes</li>
+                    </ul>
+                  </div>
+                </div>
+                
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="set-date-loc">
+            <div class="set-loc">
+              <label for="set-loc">Pick-up Location</label>
+              <select id="location" name="location">
+                <option value="" disabled selected hidden>location</option>
+                <option value="Galle">Galle</option>
+                <option value="Negombo">Negombo</option>
+                <option value="Mathale">Mathale</option>
+                <option value="Kandy">Kandy</option>
+              </select>
+            </div>
+            <div class="date-input">
+              <label for="start-date">Start Date</label>
+              <input type="date" id="start-date" name="start-date">
+            </div>
+            <div class="date-input">
+              <label for="end-date">End Date</label>
+              <input type="date" id="end-date" name="end-date">
+            </div>
+          </div>
+          
+          
+        </div>
+
+        
+        <button class="book-btn">Book Now</button>
+        
+        
+
+       
+
+
+   
+    
+</body>
+<script src="navbar.js"></script>
+<script src="sidebar.js"></script>
+<script src="details.js"></script>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent A Ride</title>
+
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="search.css">
+
+
+    <!-- JQUERY -->
+    <script src="js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+
+    <!-- sidebar -->
+
+<div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">Rent A Ride</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="side-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-user-pin'></i>
+          <span class="links_name">Profile</span>
+        </a>
+         <span class="tooltip">Profile</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bxs-user-plus' ></i>
+         <span class="links_name">Request</span>
+       </a>
+       <span class="tooltip">Request</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-wallet' ></i>
+         <span class="links_name">Payment</span>
+       </a>
+       <span class="tooltip">Payment</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-star' ></i>
+         <span class="links_name">Reviews</span>
+       </a>
+       <span class="tooltip">Reviews</span>
+     </li>
+        <li class="profile">
+          <a href="#" class="logout">
+            <i class='bx bx-log-out' ></i>
+            <span class="links_name">log out</span>
+          </a>
+        </li>
+        
+    </ul>
+  </div>
+  
+
+    <div class="home-section">
+         <!-- nav bar -->
+        <nav class="navbar">
+            <div class="container-icon">
+                <a href=""><img class="logo" src="img/logo.png" alt="Rent a Ride Logo"></a>
+            </div>
+            <ul class="nav-list" id="nav-list">
+                <li class="list-item 1"><a href="#">Sign in</a></li>
+                <li class="list-item 2"><a href="#">Register</a></li>      
+            </ul>
+            <div id="toggle-btn" class="menu-container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+
+        <!-- Banner -->
+        <div class="banner-msg">
+            <h1>FAST AND EASY WAY TO <span class="bold yellow">RENT A VEHICLE</span></h1>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="search">
+          <label class="label-l" for="search"><i class='bx bx-search'></i>Search </label>
+          <input type="search" id="search" placeholder="Type to search">
+          <div class="location-select">
+            <select id="location" name="location">
+              <option value="" disabled selected hidden>location</option>
+              <option value="Galle">Galle</option>
+              <option value="Negombo">Negombo</option>
+              <option value="Mathale">Mathale</option>
+              <option value="Kandy">Kandy</option>
+            </select>
+          </div>
+          <div class="date-select">
+            <label class="lable-sm" for="date">Date</label>
+            <input type="date" id="date" name="date">
+            </div>
+          <div id='filter'>
+            <button class='scooter'>Scooter</button>
+            <button class='cars'>Cars</button>
+            <button class='vans'>Vans</button>
+            <button class=''>Clear</button>
+        </div>
+        </div>
+
+        <!-- Table -->
+
+        <div class="table-container">
+          <div id="table" class="table">
+          <div class="table-header">
+            <div class="header__item"><a id="name" class="filter__link" href="#"></a></div>
+            <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Vehicle</a></div>
+            <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Ratings</a></div>
+            <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Location</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Rent(P/D)</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#"></a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#"></a></div>
+          </div>
+          <div class="table-content">	
+            <div class="table-row scooter">		
+              <div class="table-data"><img src="img/table/scooter.png" width="56px"></div>
+              <div class="table-data">Dio Scooter</div>
+              <div class="table-data">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                      </div>
+              <div class="table-data">Galle</div>
+              <div class="table-data">Rs 3500.00</div>
+              <div class="table-data"><button class="view-button"><i class='bx bx-show'></i> View</button></div>
+              <div class="table-data"><button class="book-button"><i class='bx bx-book-add'></i> Book</button></div>
+            </div>
+            <div class="table-row scooter">
+              <div class="table-data"><img src="img/table/scooter.png" width="56px"></div>
+              <div class="table-data">Wego</div>
+              <div class="table-data">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
+                      </div>
+              <div class="table-data">Negombo</div>
+              <div class="table-data">Rs 4500.00</div>
+              <div class="table-data"><button class="view-button"><i class='bx bx-show'></i> View</button></div>
+              <div class="table-data"><button class="book-button"><i class='bx bx-book-add'></i> Book</button></div>
+            </div>
+            <div class="table-row scooter">
+              <div class="table-data"><img src="img/table/scooter.png" width="56px"></div>
+              <div class="table-data">Scooty pep</div>
+              <div class="table-data">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                      </div>
+              <div class="table-data">Mathale</div>
+              <div class="table-data">Rs 5500.00</div>
+              <div class="table-data"><button class="view-button"><i class='bx bx-show'></i> View</button></div>
+              <div class="table-data"><button class="book-button"><i class='bx bx-book-add'></i> Book</button></div>
+            </div>
+            <div class="table-row cars">
+              <div class="table-data"><img src="img/table/sedan.png" width="56px"></div>
+              <div class="table-data">Toyota Prius</div>
+              <div class="table-data">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                      </div>
+              <div class="table-data">Kandy</div>
+              <div class="table-data">Rs 25000.00</div>
+              <div class="table-data"><button class="view-button"><i class='bx bx-show'></i> View</button></div>
+              <div class="table-data"><button class="book-button"><i class='bx bx-book-add'></i> Book</button></div>
+            </div>
+          </div>	
+        </div>
+        </div>
+
+    </div>
+
+
+   
+    
+</body>
+<script src="navbar.js"></script>
+<script src="sidebar.js"></script>
+<script src="search.js"></script>
+</html>
